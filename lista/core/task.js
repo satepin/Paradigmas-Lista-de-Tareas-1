@@ -6,7 +6,7 @@ let uEdicion; //cualquier fecha valida, puede ser vacia o tener inicialmente la 
 let vencimiento; //cualquier fecha valida, puede ser vacia
 let dificultad; //facil, medio, dificil. por defecto facil
 
-let task = {
+const task = {
     titulo: titulo,
     descripcion: descripcion,
     estado: estado,
@@ -15,3 +15,27 @@ let task = {
     vencimiento: vencimiento,
     dificultad: dificultad
 }
+
+const flagTitulo = {
+    maxLength: 100,
+    puedeVacio: false
+}
+
+const flagDescripcion = {
+    maxLength: 500,
+    puedeVacio: true
+}
+
+const flagEstado = new Map ([["pendiente",1],["en curso",2],["completada",3],["cancelada",4]]);
+
+const flagDificultad = new Map ([["facil",1],["medio",2],["dificil",3]]);
+
+const taskFlags = {
+    titulo: flagTitulo,
+    descripcion: flagDescripcion,
+    estado: flagEstado,
+    dificultad: flagDificultad
+}
+
+export {task, taskFlags};
+ //importar fechas

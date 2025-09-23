@@ -14,4 +14,7 @@ presiona cualquier tecla para continuar...
 - Debe informarse que se han guardado los datos.
 - La persona debe poder volver al Menu principal o al Menu anterior (a criterio del equipo de desarrollo)
 - Fecha de Vencimiento (BONUS)
+
+agregar.js recibe una tarea creada y verificada en crear.js y la agrega a una lista de tareas
 */
+

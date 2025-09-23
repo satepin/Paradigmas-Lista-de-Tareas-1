@@ -7,3 +7,12 @@
 - Deben poder agregarse cualquier cantidad de tareas.
 
 */
+function main(){
+   let username = "Usuario"; //pedir nombre usuario
+   let loop = true;
+   do {
+         mainMenu(username);
+   }while (loop); //agregar salida al menu
+}
+
+main();
