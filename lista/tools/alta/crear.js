@@ -18,6 +18,7 @@ presiona cualquier tecla para continuar...
 
 crear.js se encarga de la creacion y validacion de una unica unidad de tarea, que sera retornada para su manejo en agregar.js
 */
+'use strict';
 
 import { prompt, set } from '../../input/promptSync.js';
 import { taskFlags } from '../../core/task.js';

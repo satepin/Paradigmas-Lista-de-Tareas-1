@@ -31,3 +31,4 @@ presiona cualquier tecla para continuar...
 - La persona debe poder volver al Menu principal o al Menu anterior
     (a criterio del equipo de desarrollo)
 */
+'use strict';

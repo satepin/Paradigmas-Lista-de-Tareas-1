@@ -7,6 +7,8 @@
 - Deben poder agregarse cualquier cantidad de tareas.
 
 */
+
+'use strict';
 import mainMenu from './mainMenu.js';
 
 function main(){

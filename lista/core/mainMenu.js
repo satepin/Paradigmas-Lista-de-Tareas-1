@@ -7,6 +7,8 @@
 
 deben validarse las entradas
 */
+
+'use strict';
 import { menuPrompt } from "../tools/input/promptSync";
 import { ver } from "../tools/ver/ver.js";
 import { buscar } from "../tools/buscar/buscar.js";

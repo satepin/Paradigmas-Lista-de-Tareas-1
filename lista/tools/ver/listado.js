@@ -16,6 +16,8 @@ ver.js recibe la lista de tareas y las muestra segun el filtro que recibe
 los criterios de busqueda son ingresados fuera del codigo
 */
 
+'use strict';
+
 export function listado(tarea, filtros) {
     console.log(`\nTareas con estado: ${filtro}`);
     for (const i of filtros) {

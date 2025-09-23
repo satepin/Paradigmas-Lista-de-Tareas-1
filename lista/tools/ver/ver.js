@@ -10,6 +10,8 @@ deben validarse las entradas
 ver.js es el menu que da a elegir el filtro para listado.js
 */
 
+'use strict';
+
 import { menuPrompt } from '../input/promptSync.js';
 import { listado } from './listado.js';
 

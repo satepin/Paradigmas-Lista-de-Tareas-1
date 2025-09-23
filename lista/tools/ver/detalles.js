@@ -19,6 +19,7 @@
  
  dividir en dos secciones: ver detalles y editar
  */
+'use strict';
 
 import readline from 'readline-sync';
 

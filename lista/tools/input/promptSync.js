@@ -1,7 +1,7 @@
+'use strict';
 import readline from 'readline-sync';
 
 let input;
-
 
 //funcion que toma input y parametros y lo valida para las flags dadas (longitud y vacio)
 export function prompt(question, flags) {
@@ -44,3 +44,11 @@ export function menuPrompt(question, min, max) {
     }
     return Math.trunc(opcion);
 }
+
+//funcion que recibe numeros en formato yyyy/mm/dd, los valida y los retorna como fecha
+export function datePrompt() {
+    const input = {day, month, year};
+    //validar que sean numeros y que esten en rango
+}
+
+function 

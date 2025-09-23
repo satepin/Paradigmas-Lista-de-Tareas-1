@@ -1,3 +1,5 @@
+'use strict';
+
 let titulo; //cualquiera hast 100 caracteres, no vacio
 let descripcion; //cualquiera hasta 500 caracteres, puede estar vacio
 let estado; //pendiente, en curso, completada, cancelada. por defecto pendiente

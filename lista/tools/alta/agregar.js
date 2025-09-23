@@ -17,6 +17,7 @@ presiona cualquier tecla para continuar...
 
 agregar.js recibe una tarea creada y verificada en crear.js y la agrega a una lista de tareas
 */
+'use strict';
 
 import { crear } from './crear.js';
 
