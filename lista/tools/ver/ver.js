@@ -6,4 +6,21 @@
 0- volver
 
 deben validarse las entradas
+
+ver.js es el menu que da a elegir el filtro para listado.js
 */
+
+import { menuPrompt } from '../input/promptSync.js';
+import { listado } from './listado.js';
+
+export function ver(tareas) {
+    console.clear();
+    console.log("¿Que tareas deseas ver?");
+    console.log("1- Todas");
+    console.log("2- Pendientes");
+    console.log("3- En curso");
+    console.log("4- Terminadas");
+    console.log("0- Volver");
+    let opcion = menuPrompt("Elige una opcion: ", 0, 4);
+    listado(tareas, opcion);
+}

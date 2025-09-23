@@ -7,6 +7,8 @@
 - Deben poder agregarse cualquier cantidad de tareas.
 
 */
+import mainMenu from './mainMenu.js';
+
 function main(){
    let username = "Usuario"; //pedir nombre usuario
    let loop = true;

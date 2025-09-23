@@ -7,6 +7,11 @@
 
 deben validarse las entradas
 */
+import { menuPrompt } from "../tools/input/promptSync";
+import { ver } from "../tools/ver/ver.js";
+import { buscar } from "../tools/buscar/buscar.js";
+import { agregar } from "../tools/alta/agregar.js";
+
 function seeMainMenu(username) {
     console.log(`Hola ${username}`);
     console.log("¿Que deseas hacer?");
@@ -16,21 +21,21 @@ function seeMainMenu(username) {
     console.log("0- salir");
 }
 
-function mainMenu(username) {
-    let menuIndex = 0;
+function mainMenu(listaTareas) {
+    let menuIndex = menuPrompt();
     seeMainMenu(username);
     switch (menuIndex) {
         case 1:
-            //funcion verTarea();
-            ver();
+            //ver la lista de tareas
+            ver(listaTareas);
             break;
         case 2:
-            //funcion buscarTarea();
-            buscar();
+            //buscar una tarea
+            buscar(listaTareas);
             break;
         case 3:
-            //funcion agregarTarea();
-            agregar();
+            //agregar una nueva tarea a la lista de tareas
+            agregar(listaTareas);
             break;
         case 0:
             console.log("Saliendo...");

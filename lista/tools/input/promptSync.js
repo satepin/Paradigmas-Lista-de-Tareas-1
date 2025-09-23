@@ -33,3 +33,14 @@ export function set(flags) {
     return 1; //valor por defecto
 
 }
+
+//funcion que recibe numeros y los valida para servir en la navegacion de menus.
+//si el numero no es entero lo trunca. si el numero no es valido reintenta
+export function menuPrompt(question, min, max) {
+    let opcion = readline.question(question);
+    if (isNaN(opcion) || opcion < min || opcion > max) {
+        console.log("Opcion invalida, intentalo de nuevo.");
+        return menuPrompt(question, min, max);
+    }
+    return Math.trunc(opcion);
+}

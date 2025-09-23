@@ -16,6 +16,10 @@ const task = {
     dificultad: dificultad
 }
 
+const listaTareas = []; //lista de tareas
+
+//flags de validacion
+
 const flagTitulo = {
     maxLength: 100,
     puedeVacio: false
@@ -37,5 +41,5 @@ const taskFlags = {
     dificultad: flagDificultad
 }
 
-export {task, taskFlags};
+export {task, taskFlags, listaTareas};
  //importar fechas

@@ -18,3 +18,15 @@ presiona cualquier tecla para continuar...
 agregar.js recibe una tarea creada y verificada en crear.js y la agrega a una lista de tareas
 */
 
+import { crear } from './crear.js';
+
+export function agregar(listaTareas) {
+    console.clear();
+    console.log("Agregar Tarea");
+    const nuevaTarea = crear();
+    listaTareas.push(nuevaTarea);
+    console.log("\n¡Tarea Agregada a la Lista!");
+    console.log(`Total de Tareas: ${listaTareas.length}`);
+    //presione cualquier tecla para continuar...
+    return listaTareas;
+}
