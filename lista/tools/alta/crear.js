@@ -20,7 +20,7 @@ crear.js se encarga de la creacion y validacion de una unica unidad de tarea, qu
 */
 'use strict';
 
-import { prompt, set } from '../../input/promptSync.js';
+import { prompt, set, datePrompt} from '../input/promptSync.js';
 import { taskFlags } from '../../core/task.js';
 
 export function crear() {
@@ -41,7 +41,12 @@ export function crear() {
 
     let dificultad = set(taskFlags.dificultad);
     // 5. Vencimiento (BONUS)
+
+    let vencimiento = datePrompt("5. Ingresa la fecha de vencimiento (dd/mm/aaaa) o deja en blanco: ");
+
     // Fechas de creación y edición
+    
+    let fechaActual = new Date().toLocaleDateString();
     // Crear la tarea usando el template
     const nuevaTarea = {
         titulo: titulo,

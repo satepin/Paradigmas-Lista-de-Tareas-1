@@ -9,9 +9,9 @@ deben validarse las entradas
 */
 
 'use strict';
-import { menuPrompt } from "../tools/input/promptSync";
+import { menuPrompt } from "../tools/input/promptSync.js";
 import { ver } from "../tools/ver/ver.js";
-import { buscar } from "../tools/buscar/buscar.js";
+import { buscar } from "../tools/ver/buscar.js";
 import { agregar } from "../tools/alta/agregar.js";
 
 function seeMainMenu(username) {
@@ -23,9 +23,9 @@ function seeMainMenu(username) {
     console.log("0- salir");
 }
 
-function mainMenu(listaTareas) {
-    let menuIndex = menuPrompt();
+export function mainMenu(listaTareas, username) {
     seeMainMenu(username);
+    let menuIndex = menuPrompt("", 0, 3);
     switch (menuIndex) {
         case 1:
             //ver la lista de tareas

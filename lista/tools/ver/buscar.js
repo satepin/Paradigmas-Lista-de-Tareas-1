@@ -32,3 +32,29 @@ presiona cualquier tecla para continuar...
     (a criterio del equipo de desarrollo)
 */
 'use strict';
+
+import { prompt } from "../input/promptSync.js";
+import { taskFlags } from '../../core/task.js';
+import { listado } from '../ver/listado.js';
+//recibe la lista de tareas y pide ingresar un string para buscar en los titulos
+//muestra el listado de tareas que coincidan con la busqueda
+//si no hay coincidencias, muestra un mensaje
+export function buscar(listaTareas) {
+    console.clear();
+    console.log("Buscar Tarea");
+    let busqueda = prompt("Introduce el titulo de una tarea para buscarla: ", taskFlags.titulo);
+    let resultados = [];
+    for (const tarea of listaTareas) {
+        if (tarea.titulo.toLowerCase().includes(busqueda.toLowerCase())) {
+            resultados.push(tarea);
+        }
+    }
+    if (resultados.length > 0) {
+        listado(resultados, busqueda);
+        //funcion elegir(resultados); no tiene archivo
+        //funcion detalles(tarea); no tiene archivo
+    } else {
+        console.log("\nNo hay tareas relacionadas con la busqueda");
+    }
+    //presione cualquier tecla para continuar...
+}

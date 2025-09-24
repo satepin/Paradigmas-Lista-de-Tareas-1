@@ -33,7 +33,7 @@ export function detalles(tarea) {
     console.log(`Vencimiento: ${tarea.vencimiento}`);
     console.log(`Creacion: ${tarea.creacion}`);
     console.log("\nSi deseas editarla, pulsa E, o presiona 0 para salir.");
-    let opcion = readline.question("Elige una opcion: ");
+    let opcion = readline.question("Elige una opcion: "); //usar promptSync.js
     if (opcion.toLowerCase() === 'e') {
         //funcion editarTarea(tarea);
         console.log("Editar Tarea - Funcion en desarrollo");

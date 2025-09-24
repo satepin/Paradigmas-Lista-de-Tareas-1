@@ -1,11 +1,11 @@
 'use strict';
-import readline from 'readline-sync';
+import promptSync from 'prompt-sync';
 
-let input;
+let input = promptSync();
 
 //funcion que toma input y parametros y lo valida para las flags dadas (longitud y vacio)
 export function prompt(question, flags) {
-    input = readline.question(question);
+    input = input.question(question);
     if (input.length > flags.maxLength) {
         input.slice(0, flags.maxLength);
         console.log(`Se ha recortado el texto a ${flags.maxLength} caracteres.`);
@@ -37,7 +37,7 @@ export function set(flags) {
 //funcion que recibe numeros y los valida para servir en la navegacion de menus.
 //si el numero no es entero lo trunca. si el numero no es valido reintenta
 export function menuPrompt(question, min, max) {
-    let opcion = readline.question(question);
+    let opcion = input.question(question);
     if (isNaN(opcion) || opcion < min || opcion > max) {
         console.log("Opcion invalida, intentalo de nuevo.");
         return menuPrompt(question, min, max);
@@ -49,6 +49,19 @@ export function menuPrompt(question, min, max) {
 export function datePrompt() {
     const input = {day, month, year};
     //validar que sean numeros y que esten en rango
+    if (dateIsValid(input.day, 2) && dateIsValid(input.month, 2) && dateIsValid(input.year, 4)) {
+        return new Date(input.year, input.month - 1, input.day);
+    }
 }
 
-function 
+function dateIsValid(input, largo) {
+    //validar que la fecha sea valida
+    if (!(isNaN(input))) {
+        //validar longitud y rango
+        if (input.length == largo) {
+            return true;
+        }
+    }
+    return false;
+}
+

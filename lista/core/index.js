@@ -9,13 +9,15 @@
 */
 
 'use strict';
-import mainMenu from './mainMenu.js';
+import {mainMenu} from './mainMenu.js';
+import { listado } from '../tools/ver/listado.js';
 
 function main(){
    let username = "Usuario"; //pedir nombre usuario
    let loop = true;
    do {
-         mainMenu(username);
+
+         mainMenu(listado,username);
    }while (loop); //agregar salida al menu
 }
 
