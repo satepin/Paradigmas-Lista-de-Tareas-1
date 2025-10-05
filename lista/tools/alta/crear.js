@@ -22,7 +22,7 @@ crear.js se encarga de la creacion y validacion de una unica unidad de tarea, qu
 
 import { prompt, set, datePrompt} from '../input/promptSync.js';
 import { taskFlags } from '../../core/task.js';
-import { imprimirTarea } from '../ver/detalles.js';
+import { detalles } from '../ver/detalles.js';
 
 export function crear() {
     console.clear();
@@ -60,7 +60,7 @@ export function crear() {
     };
 
     console.log("\n¡Datos Guardados!");
-    imprimirTarea(nuevaTarea);
+    detalles(nuevaTarea);
 
     //presione cualquier tecla para continuar...
 

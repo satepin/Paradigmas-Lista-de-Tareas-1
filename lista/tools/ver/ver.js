@@ -24,5 +24,17 @@ export function ver(tareas) {
     console.log("4- Terminadas");
     console.log("0- Volver");
     let opcion = menuPrompt("Elige una opcion: ", 0, 4);
-    listado(tareas, opcion);
+    if (opcion === 0) { return; }
+    let filtradas = [];
+    if (opcion === 1) { filtradas = tareas; }
+    if (opcion === 2) {
+        for (const t of tareas) { if (t.estado === 'pendiente') { filtradas.push(t); } }
+    }
+    if (opcion === 3) {
+        for (const t of tareas) { if (t.estado === 'en curso') { filtradas.push(t); } }
+    }
+    if (opcion === 4) {
+        for (const t of tareas) { if (t.estado === 'completada') { filtradas.push(t); } }
+    }
+    listado(filtradas, opcion);
 }

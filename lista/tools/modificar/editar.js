@@ -27,16 +27,18 @@ export function editar(tarea) {
     console.log("- si deseas mantener los valores de un atributo, simplemente dejalo en blanco");
     console.log("- si deseas dejar en blanco un atributo, escribe un espacio\n");
     //1. ingresa la descripcion
-    let descripcion = prompt("1. Ingresa la descripcion: ", tarea.descripcion, taskFlags.descripcion);
+    let descripcion = prompt("1. Ingresa la descripcion: ", taskFlags.descripcion);
     //2- estado ([P]endiente / [E]n curso / [T]erminada / [C]ancelada)
-    let estado = set(tarea.estado, taskFlags.estado);
+    let estado = set(taskFlags.estado);
     //3- dificultad ([1] / [2] / [3])
-    let dificultad = set(tarea.dificultad, taskFlags.dificultad);
+    let dificultad = set(taskFlags.dificultad);
     //4- vencimiento (dd/mm/aaaa) no hay codigo para recibir fechas aun
     //modificar ultima edicion al momento de editar
     let fechaActual = new Date().toLocaleDateString();
     //actualizar la tarea
-    tarea.descripcion = descripcion;
+    if (descripcion === '') { /* mantener */ }
+    else if (descripcion === ' ') { tarea.descripcion = ''; }
+    else { tarea.descripcion = descripcion; }
     tarea.estado = estado;
     tarea.dificultad = dificultad;
     //tarea.vencimiento = vencimiento;
