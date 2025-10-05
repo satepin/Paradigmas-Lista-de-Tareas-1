@@ -18,8 +18,7 @@ debe poder volverse al menu previo o inicial
 */
 'use strict';
 
-import { taskFlags } from "../../core/task";
-import { prompt, set } from '../../input/promptSync.js';
+import { prompt, set } from '../input/promptSync.js';
 import { taskFlags } from "../../core/task.js";
 
 export function editar(tarea) {

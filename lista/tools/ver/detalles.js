@@ -21,23 +21,28 @@
  */
 'use strict';
 
-import readline from 'readline-sync';
+import { prompt } from '../input/promptSync.js';
+import { editar } from '../modificar/editar.js';
 
 export function detalles(tarea) {
     console.clear();
-    console.log("Esta es la tarea que elegiste:");
+    imprimirTarea(tarea);
+    console.log("\nSi deseas editarla, pulsa E, o presiona 0 para salir.");
+    let opcion = prompt("Elige una opcion: ", { maxLength: 1, puedeVacio: false });
+    if (opcion.toLowerCase() === 'e') {
+        //funcion editarTarea(tarea);
+        editar(tarea);
+    } else if (opcion === '0') {
+        console.log("Saliendo...");
+    }
+}
+
+export function imprimirTarea(tarea) {
+        console.log("Esta es la tarea que elegiste:");
     console.log(`Titulo: ${tarea.titulo}`);
     console.log(`Descripcion: ${tarea.descripcion}`);
     console.log(`Estado: ${tarea.estado}`);
     console.log(`Dificultad: ${tarea.dificultad}`);
     console.log(`Vencimiento: ${tarea.vencimiento}`);
     console.log(`Creacion: ${tarea.creacion}`);
-    console.log("\nSi deseas editarla, pulsa E, o presiona 0 para salir.");
-    let opcion = readline.question("Elige una opcion: "); //usar promptSync.js
-    if (opcion.toLowerCase() === 'e') {
-        //funcion editarTarea(tarea);
-        console.log("Editar Tarea - Funcion en desarrollo");
-    } else if (opcion === '0') {
-        console.log("Saliendo...");
-    }
 }

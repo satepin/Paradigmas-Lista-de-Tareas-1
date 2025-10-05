@@ -17,9 +17,9 @@ import { agregar } from "../tools/alta/agregar.js";
 function seeMainMenu(username) {
     console.log(`Hola ${username}`);
     console.log("¿Que deseas hacer?");
-    console.log("1- Crear Tarea");
-    console.log("2- Buscar una tarea");
-    console.log("3- agregar una tarea");
+    console.log("1- Ver mis Tareas");
+    console.log("2- Buscar una Tarea");
+    console.log("3- Agregar una nueva Tarea");
     console.log("0- salir");
 }
 
@@ -28,7 +28,7 @@ export function mainMenu(listaTareas, username) {
     let menuIndex = menuPrompt("", 0, 3);
     switch (menuIndex) {
         case 1:
-            //ver la lista de tareas
+            //ver tarea
             ver(listaTareas);
             break;
         case 2:
@@ -41,6 +41,10 @@ export function mainMenu(listaTareas, username) {
             break;
         case 0:
             console.log("Saliendo...");
-            break; 
+            return false;
+        default:
+            console.log("Opción no válida");
+            break;
     }
+    return true;
 }

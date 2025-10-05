@@ -10,14 +10,15 @@
 
 'use strict';
 import {mainMenu} from './mainMenu.js';
-import { listado } from '../tools/ver/listado.js';
 
 function main(){
    let username = "Usuario"; //pedir nombre usuario
    let loop = true;
+   // Lista de tareas en memoria (se pasa al menú)
+   const listaTareas = [];
    do {
 
-         mainMenu(listado,username);
+      loop = mainMenu(listaTareas,username);
    }while (loop); //agregar salida al menu
 }
 

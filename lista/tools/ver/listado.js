@@ -18,13 +18,27 @@ los criterios de busqueda son ingresados fuera del codigo
 
 'use strict';
 
-export function listado(tarea, filtros) {
-    console.log(`\nTareas con estado: ${filtro}`);
-    for (const i of filtros) {
-        console.log(`[$i] - ${tarea[i].titulo}`);
+import { menuPrompt } from "../input/promptSync.js";
+import { detalles } from "./detalles.js";
+
+// Muestra un listado simple de tareas que coinciden con la búsqueda/filtrado
+// tareas: Array<{ titulo: string, ... }>
+// etiqueta: string que describe el listado (por ejemplo, el término buscado)
+export function listado(tareas, etiqueta = '') {
+    if (etiqueta) console.log(`\nResultados para: ${etiqueta}`);
+    if (!Array.isArray(tareas) || tareas.length === 0) {
+        console.log('No hay tareas para mostrar.');
+        return;
     }
-    console.log("\n¿Deseas ver el estado de alguna?");
-    console.log("Introduce el numero para verla o 0 para volver.");
-    //funcion elegir(tareas); no tiene archivo
-    //funcion detalles(tarea);
+    tareas.forEach((t, i) => {
+        console.log(`[${i + 1}] - ${t.titulo}`);
+    });
+    console.log("\n¿Deseas ver los detalles de alguna?");
+    elegir(tareas);
+}
+
+function elegir(tareas) {
+    const index = menuPrompt("Introduce el número de la tarea a ver o 0 para volver: ", 0, tareas.length);
+    if (index === 0) return;
+    detalles(tareas[index - 1]);
 }
