@@ -1,5 +1,3 @@
-// Types and interfaces for the task management system
-
 export type TaskStatus = 'pendiente' | 'en curso' | 'completada' | 'cancelada';
 export type TaskDifficulty = 'facil' | 'medio' | 'dificil';
 

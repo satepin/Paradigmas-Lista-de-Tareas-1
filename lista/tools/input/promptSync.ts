@@ -19,19 +19,20 @@ export function prompt(question: string, flags: ValidationFlag = { maxLength: In
     }
 }
 
+// función que presenta opciones numeradas y retorna la opción seleccionada por el usuario
 export function set<T>(flags: Map<T, number>): T {
-    // escribir todas las opciones que el mapa tiene
-    for (let [tipo, posicion] of flags) {
-        console.log(`${posicion} - ${tipo}`);
+    // mostrar todas las opciones disponibles del mapa
+    for (let [opcion, numero] of flags) {
+        console.log(`${numero} - ${opcion}`);
     }
     while (true) {
-        const opcion: string = ask("Elige una opcion: ");
-        for (let [tipo, posicion] of flags) {
-            if (String(opcion) === String(posicion)) {
-                return tipo;
+        const entrada: string = ask('Elige una opción: ');
+        for (let [opcion, numero] of flags) {
+            if (String(entrada) === String(numero)) {
+                return opcion;
             }
         }
-        console.log("Opción inválida, intenta nuevamente.");
+        console.log('Opción inválida, intenta nuevamente.');
     }
 }
 
